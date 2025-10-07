@@ -71,6 +71,7 @@ jobs:
       - name: Build package as builder and patch for optimization
         run: |
           set -euxo pipefail
+          sed -i 's/^pkgname=(godot)/pkgname=(godot-perf)/' PKGBUILD
           sed -i 's/cflags="\$CFLAGS /cflags="$CFLAGS -O3 /' PKGBUILD
           sed -i 's/cxxflags="\$CXXFLAGS /cxxflags="$CXXFLAGS -O3 /' PKGBUILD
           sed -i '/use_llvm=no/ a\    lto=full' PKGBUILD
