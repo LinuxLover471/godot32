@@ -7,7 +7,7 @@
 # Contributor: Toolybird <toolybird at tuta dot io>
 
 pkgbase=godot32
-pkgname=(godot)
+pkgname=(godot-perf)
 pkgver=4.5
 pkgrel=1
 pkgdesc='Advanced cross-platform 2D and 3D game engine (32-bit)'
