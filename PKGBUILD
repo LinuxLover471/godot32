@@ -102,7 +102,7 @@ build() {
 }
 
 package_godot() {
-  cd $pkgbase-$pkgver-stable
+  cd godot-$pkgver-stable
 
   install -Dm755 bin/godot.linuxbsd.editor.$GODOT_ARCH "$pkgdir/usr/bin/godot"
 
