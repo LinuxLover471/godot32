@@ -1,0 +1,9 @@
+The following lib32 versions are not available.
+!ca-certificates
+!embree
+!graphite
+libspeechd
+!libsquish
+!libwslay
+!miniupnpc
+!openxr
