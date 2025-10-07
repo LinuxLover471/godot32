@@ -1,4 +1,4 @@
-name: Build Godot (32-bit) PKGBUILD
+name: Build Godot (32-bit)
 on: workflow_dispatch
 
 jobs:
