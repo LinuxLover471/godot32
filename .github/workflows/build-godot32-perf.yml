@@ -71,7 +71,7 @@ jobs:
       - name: Build package as builder (no -s)
         run: |
           set -euxo pipefail
-          su - builder -c "cd $GITHUB_WORKSPACE && makepkg -p PKGBUILD.perf --noconfirm"
+          su - builder -c "cd $GITHUB_WORKSPACE && makepkg -p PKGBUILD-perf --noconfirm"
 
       - name: Upload built package
         uses: actions/upload-artifact@v4
