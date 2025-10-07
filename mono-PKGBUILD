@@ -5,7 +5,7 @@
 # Contributor: Matthew Bentley <matthew@mtbentley.us>
 # Contributor: HurricanePootis <hurricanepootis@protonmail.com>
 # Contributor: Toolybird <toolybird at tuta dot io>
-
+#### WARNING: There's no guarantee this works, as I haven't tested it yet. Nor do I plan to bring godot-mono support. ####
 pkgbase=godot32
 pkgname=(godot godot-mono)
 pkgver=4.5
