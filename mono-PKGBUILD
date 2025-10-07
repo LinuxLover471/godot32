@@ -90,7 +90,7 @@ build() {
     builtin_rvo2_2d=yes
     builtin_rvo2_3d=yes
     builtin_squish=yes # lib32-libsquish isn't available.
-    builtin_wslay=no   # lib32-libwslay isn't available.
+    builtin_wslay=yes   # lib32-libwslay isn't available.
     builtin_xatlas=yes
     builtin_zlib=no
     builtin_zstd=no
