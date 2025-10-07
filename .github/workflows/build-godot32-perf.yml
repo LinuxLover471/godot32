@@ -27,7 +27,7 @@ jobs:
           pacman-key --populate archlinux || true
           pacman -Syu --noconfirm
 
-      - name: Install build & runtime dependencies (best effort)
+      - name: Install build & runtime dependencies
         run: |
           set -euxo pipefail
           # core build deps (ensure these are present)
@@ -68,10 +68,12 @@ jobs:
           useradd -m builder || true
           chown -R builder:builder "$GITHUB_WORKSPACE"
 
-      - name: Build package as builder (no -s)
+      - name: Build package as builder and patch for optimization
         run: |
           set -euxo pipefail
-          cp PKGBUILDPERF PKGBUILD
+          sed -i 's/cflags="\$CFLAGS /cflags="$CFLAGS -O3 /' PKGBUILD
+          sed -i 's/cxxflags="\$CXXFLAGS /cxxflags="$CXXFLAGS -O3 /' PKGBUILD
+          sed -i '/use_llvm=no/ a\    lto=full' PKGBUILD
           su - builder -c "cd $GITHUB_WORKSPACE && makepkg --noconfirm"
 
       - name: Upload built package
