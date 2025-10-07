@@ -16,12 +16,12 @@ jobs:
           if ! grep -q '^\[multilib\]' /etc/pacman.conf; then
             cat >> /etc/pacman.conf <<'EOF'
 
-[core]
-Include = /etc/pacman.d/mirrorlist
-
-[multilib]
-Include = /etc/pacman.d/mirrorlist
-EOF
+          [core]
+          Include = /etc/pacman.d/mirrorlist
+          
+          [multilib]
+          Include = /etc/pacman.d/mirrorlist
+          EOF
           fi
           pacman-key --init || true
           pacman-key --populate archlinux || true
