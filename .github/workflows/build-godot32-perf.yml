@@ -73,7 +73,6 @@ jobs:
           set -euxo pipefail
           sed -i 's/cflags="\$CFLAGS /cflags="$CFLAGS -O3 /' PKGBUILD
           sed -i 's/cxxflags="\$CXXFLAGS /cxxflags="$CXXFLAGS -O3 /' PKGBUILD
-          sed -i '/use_llvm=no/ a\    lto=full' PKGBUILD
           su - builder -c "cd $GITHUB_WORKSPACE && makepkg --noconfirm"
 
       - name: Upload built package
