@@ -1,3 +1,4 @@
+####### Original #######
 # Maintainer: Alexander F. Rødseth <xyproto@archlinux.org>
 # Contributor: loqs
 # Contributor: Jorge Araya Navarro <jorgejavieran@yahoo.com.mx>
@@ -5,6 +6,9 @@
 # Contributor: Matthew Bentley <matthew@mtbentley.us>
 # Contributor: HurricanePootis <hurricanepootis@protonmail.com>
 # Contributor: Toolybird <toolybird at tuta dot io>
+
+####### Godot32 maintainers ######
+# Maintainer: LinuxLover471
 
 pkgname=godot
 pkgver=4.5
