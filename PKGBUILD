@@ -127,15 +127,21 @@ build() {
   scons "${_args[@]}"
 }
 
-package_godot() {
+package_godot32() {
   cd $_pkgname-$pkgver-stable
 
-  install -Dm755 bin/godot.linuxbsd.editor.$GODOT_ARCH "$pkgdir/usr/bin/godot"
+  install -Dm755 bin/godot.linuxbsd.editor.$GODOT_ARCH "$pkgdir/usr/bin/godot32"
 
-  install -Dm644 icon.svg "$pkgdir/usr/share/pixmaps/$_pkgname.svg"
-  install -Dm644 misc/dist/linux/org.godotengine.Godot.desktop "$pkgdir/usr/share/applications/org.godotengine.Godot.desktop"
-  install -Dm644 misc/dist/linux/org.godotengine.Godot.xml "$pkgdir/usr/share/mime/packages/org.godotengine.Godot.xml"
+  install -Dm644 icon.svg "$pkgdir/usr/share/pixmaps/$pkgname.svg"
+  install -Dm644 misc/dist/linux/org.godotengine.Godot.desktop "$pkgdir/usr/share/applications/org.godotengine.Godot32.desktop"
+  install -Dm644 misc/dist/linux/org.godotengine.Godot.xml "$pkgdir/usr/share/mime/packages/org.godotengine.Godot32.xml"
+  # Patch upstream Godot.desktop
+  sed -i \
+    -e 's|Exec=godot|Exec=godot32|' \
+    -e 's|Icon=godot|Icon=godot32|' \
+    -e 's|Name=Godot Engine|Name=Godot Engine (32-bit)|' \
+    "$pkgdir/usr/share/applications/org.godotengine.Godot32.desktop"
 
-  install -Dm644 misc/dist/linux/godot.6 "$pkgdir/usr/share/man/man6/$_pkgname.6"
-  install -Dm644 LICENSE.txt "$pkgdir/usr/share/licenses/$_pkgname/LICENSE"
+  install -Dm644 misc/dist/linux/godot.6 "$pkgdir/usr/share/man/man6/$pkgname.6"
+  install -Dm644 LICENSE.txt "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
