@@ -10,7 +10,8 @@
 ####### Godot32 maintainers ######
 # Maintainer: LinuxLover471
 
-pkgname=godot
+_pkgname=godot
+pkgname=${_pkgname}32
 pkgver=4.5
 pkgrel=1
 pkgdesc='Advanced cross-platform 2D and 3D game engine (32-bit)'
@@ -44,11 +45,11 @@ optdepends=(
   'pipewire-alsa: for audio support'
   'pulse-native-provider: for audio support'
 )
-source=("$pkgname-$pkgver.tar.gz::https://github.com/godotengine/godot/archive/$pkgver-stable.tar.gz")
+source=("$_pkgname-$pkgver.tar.gz::https://github.com/godotengine/godot/archive/$pkgver-stable.tar.gz")
 b2sums=('fa8aa954974701f5070c06dd0801dadec903159d75ac6a21ec7c85d533dad2c1f42ff21fe40de33fa430c82ba79abeb0d69767eede0112bc4ac02d6e1441b81d')
 
 prepare() {
-  cd $pkgname-$pkgver-stable
+  cd $_pkgname-$pkgver-stable
 
   # Patch for miniupnpc
   sed -i 's/addr, 16/addr, 16, nullptr, 0/g' modules/upnp/upnp.cpp
@@ -61,7 +62,7 @@ prepare() {
 }
 
 build() {
-  cd $pkgname-$pkgver-stable
+  cd $_pkgname-$pkgver-stable
 
   export BUILD_NAME=arch_linux
 
@@ -127,14 +128,14 @@ build() {
 }
 
 package_godot() {
-  cd godot-$pkgver-stable
+  cd $_pkgname-$pkgver-stable
 
   install -Dm755 bin/godot.linuxbsd.editor.$GODOT_ARCH "$pkgdir/usr/bin/godot"
 
-  install -Dm644 icon.svg "$pkgdir/usr/share/pixmaps/$pkgname.svg"
+  install -Dm644 icon.svg "$pkgdir/usr/share/pixmaps/$_pkgname.svg"
   install -Dm644 misc/dist/linux/org.godotengine.Godot.desktop "$pkgdir/usr/share/applications/org.godotengine.Godot.desktop"
   install -Dm644 misc/dist/linux/org.godotengine.Godot.xml "$pkgdir/usr/share/mime/packages/org.godotengine.Godot.xml"
 
-  install -Dm644 misc/dist/linux/godot.6 "$pkgdir/usr/share/man/man6/$pkgname.6"
-  install -Dm644 LICENSE.txt "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  install -Dm644 misc/dist/linux/godot.6 "$pkgdir/usr/share/man/man6/$_pkgname.6"
+  install -Dm644 LICENSE.txt "$pkgdir/usr/share/licenses/$_pkgname/LICENSE"
 }
