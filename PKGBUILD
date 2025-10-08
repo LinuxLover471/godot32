@@ -14,11 +14,31 @@ pkgdesc='Advanced cross-platform 2D and 3D game engine (32-bit)'
 url='https://godotengine.org/'
 license=(MIT)
 arch=(x86_64)
-makedepends=(alsa-lib pulse-native-provider scons mold setconf yasm)
-depends=(lib32-brotli lib32-freetype2 lib32-libglvnd lib32-libtheora lib32-libvorbis
-  lib32-libwebp lib32-libxcursor lib32-libxi lib32-libxinerama lib32-libxrandr lib32-pcre2)
-optdepends=('pipewire-alsa: for audio support'
-  'pulse-native-provider: for audio support')
+makedepends=(
+  alsa-lib 
+  pulse-native-provider 
+  scons 
+  mold 
+  setconf 
+  yasm
+)
+depends=(
+  lib32-brotli
+  lib32-freetype2
+  lib32-libglvnd
+  lib32-libtheora 
+  lib32-libvorbis
+  lib32-libwebp 
+  lib32-libxcursor
+  lib32-libxi
+  lib32-libxinerama
+  lib32-libxrandr
+  lib32-pcre2
+)
+optdepends=(
+  'pipewire-alsa: for audio support'
+  'pulse-native-provider: for audio support'
+)
 source=("$pkgname-$pkgver.tar.gz::https://github.com/godotengine/godot/archive/$pkgver-stable.tar.gz")
 b2sums=('fa8aa954974701f5070c06dd0801dadec903159d75ac6a21ec7c85d533dad2c1f42ff21fe40de33fa430c82ba79abeb0d69767eede0112bc4ac02d6e1441b81d')
 
