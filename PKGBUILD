@@ -18,8 +18,6 @@ pkgdesc='Advanced cross-platform 2D and 3D game engine (32-bit)'
 url='https://godotengine.org/'
 license=(MIT)
 arch=(x86_64)
-provides=("godot32")
-conflicts=("godot32")
 makedepends=(
   alsa-lib 
   pulse-native-provider 
@@ -62,11 +60,11 @@ prepare() {
 }
 
 build() {
-  cd $_pkgname-$pkgver-stable
+  cd "$_pkgname-$pkgver-stable"
 
   export BUILD_NAME=arch_linux
 
-  export GODOT_ARCH=x86_32 # Explicitly set 32-bit build.
+  export _godot_arch=x86_32 # Explicitly set 32-bit build.
 
   # Not unbundled (yet):
   #  mbedtls
@@ -79,7 +77,7 @@ build() {
     cflags="$CFLAGS -fPIC -Wl,-z,relro,-z,now -w"
     cxxflags="$CXXFLAGS -fPIC -Wl,-z,relro,-z,now -w"
     linkflags="$LDFLAGS"
-    arch=$GODOT_ARCH
+    arch=$_godot_arch
     bits=32     # Ensure 32-bit binary.
     linker=mold # Use mold for faster linking.
     builtin_brotli=no
@@ -130,7 +128,7 @@ build() {
 package_godot32() {
   cd $_pkgname-$pkgver-stable
 
-  install -Dm755 bin/godot.linuxbsd.editor.$GODOT_ARCH "$pkgdir/usr/bin/godot32"
+  install -Dm755 bin/godot.linuxbsd.editor.$_godot_arch "$pkgdir/usr/bin/godot32"
 
   install -Dm644 icon.svg "$pkgdir/usr/share/pixmaps/$pkgname.svg"
   install -Dm644 misc/dist/linux/org.godotengine.Godot.desktop "$pkgdir/usr/share/applications/org.godotengine.Godot32.desktop"
