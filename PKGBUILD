@@ -124,6 +124,7 @@ package() {
   install -Dm644 icon.svg "$pkgdir/usr/share/pixmaps/$pkgname.svg"
   install -Dm644 misc/dist/linux/org.godotengine.Godot.desktop "$pkgdir/usr/share/applications/org.godotengine.Godot32.desktop"
   install -Dm644 misc/dist/linux/org.godotengine.Godot.xml "$pkgdir/usr/share/mime/packages/org.godotengine.Godot32.xml"
+  
   # Patch upstream Godot.desktop
   sed -i \
     -e 's|Exec=godot|Exec=godot32|' \
