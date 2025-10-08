@@ -1,14 +1,5 @@
-####### Original #######
-# Maintainer: Alexander F. Rødseth <xyproto@archlinux.org>
-# Contributor: loqs
-# Contributor: Jorge Araya Navarro <jorgejavieran@yahoo.com.mx>
-# Contributor: Cristian Porras <porrascristian@gmail.com>
-# Contributor: Matthew Bentley <matthew@mtbentley.us>
-# Contributor: HurricanePootis <hurricanepootis@protonmail.com>
-# Contributor: Toolybird <toolybird at tuta dot io>
-
-####### Godot32 maintainers ######
 # Maintainer: LinuxLover471
+# Based on: godot (Arch Linux official package)
 
 _pkgname=godot
 pkgname=${_pkgname}32
