@@ -10,20 +10,20 @@ url='https://godotengine.org/'
 license=(MIT)
 arch=(x86_64)
 makedepends=(
-  alsa-lib 
-  pulse-native-provider 
-  scons 
-  mold 
-  setconf 
+  alsa-lib
+  pulse-native-provider
+  scons
+  mold
+  setconf
   yasm
 )
 depends=(
   lib32-brotli
   lib32-freetype2
   lib32-libglvnd
-  lib32-libtheora 
+  lib32-libtheora
   lib32-libvorbis
-  lib32-libwebp 
+  lib32-libwebp
   lib32-libxcursor
   lib32-libxi
   lib32-libxinerama
