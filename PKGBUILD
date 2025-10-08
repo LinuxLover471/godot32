@@ -38,7 +38,7 @@ source=("$_pkgname-$pkgver.tar.gz::https://github.com/godotengine/godot/archive/
 b2sums=('fa8aa954974701f5070c06dd0801dadec903159d75ac6a21ec7c85d533dad2c1f42ff21fe40de33fa430c82ba79abeb0d69767eede0112bc4ac02d6e1441b81d')
 
 prepare() {
-  cd $_pkgname-$pkgver-stable
+  cd "$_pkgname-$pkgver-stable"
 
   # Patch for miniupnpc
   sed -i 's/addr, 16/addr, 16, nullptr, 0/g' modules/upnp/upnp.cpp
@@ -116,8 +116,8 @@ build() {
   scons "${_args[@]}"
 }
 
-package_godot32() {
-  cd $_pkgname-$pkgver-stable
+package() {
+  cd "$_pkgname-$pkgver-stable"
 
   install -Dm755 bin/godot.linuxbsd.editor.$_godot_arch "$pkgdir/usr/bin/godot32"
 
