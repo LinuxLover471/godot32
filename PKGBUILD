@@ -6,7 +6,6 @@
 # Contributor: HurricanePootis <hurricanepootis@protonmail.com>
 # Contributor: Toolybird <toolybird at tuta dot io>
 
-pkgbase=godot32
 pkgname=godot
 pkgver=4.5
 pkgrel=1
@@ -14,6 +13,8 @@ pkgdesc='Advanced cross-platform 2D and 3D game engine (32-bit)'
 url='https://godotengine.org/'
 license=(MIT)
 arch=(x86_64)
+provides=("godot32")
+conflicts=("godot32")
 makedepends=(
   alsa-lib 
   pulse-native-provider 
