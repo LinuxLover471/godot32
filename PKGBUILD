@@ -3,7 +3,7 @@
 
 _pkgname=godot
 pkgname=${_pkgname}32
-pkgver=4.5
+pkgver=4.5.1
 pkgrel=1
 pkgdesc='Advanced cross-platform 2D and 3D game engine (32-bit)'
 url='https://godotengine.org/'
