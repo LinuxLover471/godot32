@@ -35,7 +35,7 @@ optdepends=(
   'pulse-native-provider: for audio support'
 )
 source=("$_pkgname-$pkgver.tar.gz::https://github.com/godotengine/godot/archive/$pkgver-stable.tar.gz")
-b2sums=('fa8aa954974701f5070c06dd0801dadec903159d75ac6a21ec7c85d533dad2c1f42ff21fe40de33fa430c82ba79abeb0d69767eede0112bc4ac02d6e1441b81d')
+b2sums=('657f675ebb39a97dd7ec1102b3650ee5a91feb9115634ee964efffcac01d957f9471e78f0169dae20d1c1cd58b99aad31c673ac5c4ed602a6c45266a581b05e0')
 
 prepare() {
   cd "$_pkgname-$pkgver-stable"
@@ -96,7 +96,7 @@ build() {
     builtin_rvo2_2d=yes
     builtin_rvo2_3d=yes
     builtin_squish=yes # lib32-libsquish isn't available.
-    builtin_wslay=yes   # lib32-libwslay isn't available.
+    builtin_wslay=yes  # lib32-libwslay isn't available.
     builtin_xatlas=yes
     builtin_zlib=no
     builtin_zstd=no
@@ -124,7 +124,7 @@ package() {
   install -Dm644 icon.svg "$pkgdir/usr/share/pixmaps/$pkgname.svg"
   install -Dm644 misc/dist/linux/org.godotengine.Godot.desktop "$pkgdir/usr/share/applications/org.godotengine.Godot32.desktop"
   install -Dm644 misc/dist/linux/org.godotengine.Godot.xml "$pkgdir/usr/share/mime/packages/org.godotengine.Godot32.xml"
-  
+
   # Patch upstream Godot.desktop
   sed -i \
     -e 's|Exec=godot|Exec=godot32|' \
